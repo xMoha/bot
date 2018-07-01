@@ -28,4 +28,24 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+
+
+const Slam = [
+  'هلا بيك',
+  'منور يا ولد',
+  'بنورك نفرح',
+  'يا هلا ',
+]
+client.on('message', msg => {
+if  (msg.content === 'هلا') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(msg.author.avatarURL)
+    msg.channel.send(slamat);
+  }
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);
